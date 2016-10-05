@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sue-VK-mlR" userLabel="Total Time Lbl">
@@ -40,11 +40,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FitnessLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="iWK-EM-aaN">
-                                <frame key="frameInset" width="99.76%" height="223"/>
+                                <frame key="frameInset" width="99.73%" height="223"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XbC-p7-YXb" userLabel="startStopBtn">
-                                <frame key="frameInset" minX="49.26%" minY="60.86%" width="144" height="64"/>
+                                <frame key="frameInset" minX="49.35%" minY="60.86%" width="144" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <state key="normal" title="Start" backgroundImage="greenRect.png">
@@ -55,14 +55,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54k-XP-fcY" userLabel="statsBtn">
-                                <frame key="frameInset" minX="49.26%" minY="89.90%" width="144" height="63"/>
+                                <frame key="frameInset" minX="49.35%" minY="89.90%" width="144" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <state key="normal" title="Show Stats" backgroundImage="orangeRect.png">
                                     <color key="titleColor" red="1" green="0.64313725490196072" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="naF-Ok-HWP" kind="show" id="e07-CG-IeZ"/>
+                                    <segue destination="naF-Ok-HWP" kind="show" id="BIZ-vv-7Q9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Lap:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udm-Xx-Hpb" userLabel="Current Lap Lbl">
@@ -73,7 +73,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oY2-Jx-RXF" userLabel="newLapBtn">
-                                <frame key="frameInset" minX="49.26%" minY="75.15%" width="144" height="64"/>
+                                <frame key="frameInset" minX="49.35%" minY="75.12%" width="144" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
                                 <state key="normal" title="New Lap" backgroundImage="blueRect.png">
@@ -130,11 +130,11 @@
             <objects>
                 <tableViewController id="naF-Ok-HWP" customClass="TableViewController" customModule="MultiWeek01" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LapsTableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZV6-0l-KkQ" userLabel="LapsTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Nqd-Aj-O7Z">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="218"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fastest Lap:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oST-Zz-rxe">
@@ -184,10 +184,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyFirstCell" textLabel="Fyr-1K-Ryt" detailTextLabel="dtP-ap-I7U" style="IBUITableViewCellStyleValue1" id="Ggg-Hn-c6s">
-                                <rect key="frame" x="0.0" y="246" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="246" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ggg-Hn-c6s" id="UyK-xk-VNb">
-                                    <frame key="frameInset" width="414" height="43"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fyr-1K-Ryt">
@@ -198,7 +198,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dtP-ap-I7U">
-                                            <frame key="frameInset" minX="341" minY="10" width="58" height="27"/>
+                                            <frame key="frameInset" minX="302" minY="10" width="58" height="27"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
                                             <nil key="textColor"/>
@@ -214,10 +214,10 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="averageLapTime" destination="eha-wu-suC" id="4Eb-1O-VX5"/>
-                        <outlet property="fastestLapTime" destination="Xnf-W9-abK" id="HLO-BV-1kW"/>
-                        <outlet property="lapsTableView" destination="ZV6-0l-KkQ" id="Ny3-Nc-npw"/>
-                        <outlet property="slowestLapTime" destination="DPm-P4-WZ6" id="tY8-BD-khd"/>
+                        <outlet property="LapsTableView" destination="ZV6-0l-KkQ" id="Jh4-78-IhK"/>
+                        <outlet property="averageLapTimeLbl" destination="eha-wu-suC" id="XR7-QU-tXo"/>
+                        <outlet property="fastestLapTimeLbl" destination="Xnf-W9-abK" id="IFk-0R-Izl"/>
+                        <outlet property="slowestLapTimeLbl" destination="DPm-P4-WZ6" id="NyF-4r-r8n"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6a-dZ-pqE" userLabel="First Responder" sceneMemberID="firstResponder"/>

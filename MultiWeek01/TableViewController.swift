@@ -11,9 +11,9 @@ import UIKit
 class TableViewController: UITableViewController{
 
     @IBOutlet var LapsTableView: UITableView!
-    @IBOutlet var fastestLapTime: UILabel!
-    @IBOutlet var slowestLapTime: UILabel!
-    @IBOutlet var averageLapTime: UILabel!
+    @IBOutlet var fastestLapTimeLbl: UILabel!
+    @IBOutlet var slowestLapTimeLbl: UILabel!
+    @IBOutlet var averageLapTimeLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,14 @@ class TableViewController: UITableViewController{
             view.scrollIndicatorInsets.top = 20
         
         }
+        
+        let minutesString = TimeTracker.slowestLapTime.0 > 9 ? "\(TimeTracker.slowestLapTime.0)" : "0\(TimeTracker.slowestLapTime.0)"
+        
+        let secondsString = TimeTracker.slowestLapTime.1 > 9 ? "\(TimeTracker.slowestLapTime.1)" : "0\(TimeTracker.slowestLapTime.1)"
+        
+        let fractionsString = TimeTracker.slowestLapTime.2 > 9 ? "\(TimeTracker.slowestLapTime.2)" : "0\(TimeTracker.slowestLapTime.2)"
+        
+        slowestLapTimeLbl.text = ("\(minutesString) : \(secondsString) . \(fractionsString)")
         
         LapsTableView.reloadData()
     }
