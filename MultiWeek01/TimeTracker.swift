@@ -40,9 +40,9 @@ class TimeTracker: UIViewController{
     var lapContainer :  [ (lapMinutes: Int, lapSeconds: Int, lapFractions : Int) ] = []
     
     static var lapList : [String] = []
-    static var fastestLapTime : Int = 0
-    static var slowestLapTime : Int = 0
-    static var averageLapTime : Int = 0
+    static var fastestLapTime : (Int, Int, Int) = (0, 0, 0)
+    static var slowestLapTime : (Int, Int, Int) = (0, 0, 0)
+    static var averageLapTime : (Int, Int, Int) = (0, 0, 0)
     
     //Calculation variables\\
     var fractions: Int = 0
@@ -232,8 +232,9 @@ class TimeTracker: UIViewController{
         totalTime.text = "\(minutesString) : \(secondsString) . \(fractionsString)"
     }
     
-    func calculateSlowestLap(lapContainer: [(Int, Int, Int)]) -> Int {
-        var answer : Int = 0
+    func calculateSlowestLap(lapContainer: [(Int, Int, Int)]) -> (Int, Int, Int) {
+        var answer : (Int, Int, Int) = (0, 0, 0)
+        
         
     
         return answer
