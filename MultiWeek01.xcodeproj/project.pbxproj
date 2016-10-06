@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1FAC621DA63B6D00F8203B /* Borrowed Material.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CB1FAC611DA63B6D00F8203B /* Borrowed Material.rtf */; };
 		CB64A8491DA1CDAE000B796A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A8481DA1CDAE000B796A /* AppDelegate.swift */; };
-		CB64A84B1DA1CDAE000B796A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A84A1DA1CDAE000B796A /* ViewController.swift */; };
 		CB64A84E1DA1CDAE000B796A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64A84C1DA1CDAE000B796A /* Main.storyboard */; };
 		CB64A8501DA1CDAE000B796A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB64A84F1DA1CDAE000B796A /* Assets.xcassets */; };
 		CB64A8531DA1CDAE000B796A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB64A8511DA1CDAE000B796A /* LaunchScreen.storyboard */; };
 		CB64A85E1DA1CDAE000B796A /* MultiWeek01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A85D1DA1CDAE000B796A /* MultiWeek01Tests.swift */; };
 		CB64A8691DA1CDAE000B796A /* MultiWeek01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64A8681DA1CDAE000B796A /* MultiWeek01UITests.swift */; };
 		CB64A8771DA2E940000B796A /* FitnessLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CB64A8761DA2E93F000B796A /* FitnessLogo.png */; };
-		CB64A8791DA2F0A5000B796A /* ButtonRects in Resources */ = {isa = PBXBuildFile; fileRef = CB64A8781DA2F0A5000B796A /* ButtonRects */; };
 		CB64A87D1DA2F0F5000B796A /* orangeRect.png in Resources */ = {isa = PBXBuildFile; fileRef = CB64A87C1DA2F0F5000B796A /* orangeRect.png */; };
 		CB64A87F1DA2F0FE000B796A /* greenRect.png in Resources */ = {isa = PBXBuildFile; fileRef = CB64A87E1DA2F0FE000B796A /* greenRect.png */; };
 		CB64A8811DA2F103000B796A /* blueRect.png in Resources */ = {isa = PBXBuildFile; fileRef = CB64A8801DA2F103000B796A /* blueRect.png */; };
@@ -42,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB1FAC611DA63B6D00F8203B /* Borrowed Material.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Borrowed Material.rtf"; sourceTree = "<group>"; };
 		CB64A8451DA1CDAE000B796A /* MultiWeek01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiWeek01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB64A8481DA1CDAE000B796A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB64A84A1DA1CDAE000B796A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB64A84D1DA1CDAE000B796A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB64A84F1DA1CDAE000B796A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB64A8521DA1CDAE000B796A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,7 +55,6 @@
 		CB64A8681DA1CDAE000B796A /* MultiWeek01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiWeek01UITests.swift; sourceTree = "<group>"; };
 		CB64A86A1DA1CDAE000B796A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB64A8761DA2E93F000B796A /* FitnessLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FitnessLogo.png; sourceTree = "<group>"; };
-		CB64A8781DA2F0A5000B796A /* ButtonRects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ButtonRects; sourceTree = "<group>"; };
 		CB64A87C1DA2F0F5000B796A /* orangeRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orangeRect.png; path = ButtonRects/orangeRect.png; sourceTree = "<group>"; };
 		CB64A87E1DA2F0FE000B796A /* greenRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenRect.png; path = ButtonRects/greenRect.png; sourceTree = "<group>"; };
 		CB64A8801DA2F103000B796A /* blueRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueRect.png; path = ButtonRects/blueRect.png; sourceTree = "<group>"; };
@@ -90,6 +88,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1FAC631DA63C2600F8203B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CB64A8761DA2E93F000B796A /* FitnessLogo.png */,
+				CB64A87C1DA2F0F5000B796A /* orangeRect.png */,
+				CB64A87E1DA2F0FE000B796A /* greenRect.png */,
+				CB64A8841DA35478000B796A /* redRect.png */,
+				CB64A8801DA2F103000B796A /* blueRect.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		CB1FAC641DA63C5900F8203B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CB64A8821DA30096000B796A /* TimeTracker.swift */,
+				CBF7BAFA1DA47ED700741F5C /* TableViewController.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		CB64A83C1DA1CDAD000B796A = {
 			isa = PBXGroup;
 			children = (
@@ -113,17 +132,11 @@
 		CB64A8471DA1CDAE000B796A /* MultiWeek01 */ = {
 			isa = PBXGroup;
 			children = (
-				CB64A8841DA35478000B796A /* redRect.png */,
-				CB64A8781DA2F0A5000B796A /* ButtonRects */,
-				CB64A8801DA2F103000B796A /* blueRect.png */,
-				CB64A87E1DA2F0FE000B796A /* greenRect.png */,
-				CB64A87C1DA2F0F5000B796A /* orangeRect.png */,
-				CB64A8761DA2E93F000B796A /* FitnessLogo.png */,
+				CB1FAC641DA63C5900F8203B /* Classes */,
+				CB1FAC631DA63C2600F8203B /* Images */,
 				CB64A8481DA1CDAE000B796A /* AppDelegate.swift */,
-				CB64A84A1DA1CDAE000B796A /* ViewController.swift */,
 				CB64A84C1DA1CDAE000B796A /* Main.storyboard */,
-				CB64A8821DA30096000B796A /* TimeTracker.swift */,
-				CBF7BAFA1DA47ED700741F5C /* TableViewController.swift */,
+				CB1FAC611DA63B6D00F8203B /* Borrowed Material.rtf */,
 				CB64A84F1DA1CDAE000B796A /* Assets.xcassets */,
 				CB64A8511DA1CDAE000B796A /* LaunchScreen.storyboard */,
 				CB64A8541DA1CDAE000B796A /* Info.plist */,
@@ -256,11 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1FAC621DA63B6D00F8203B /* Borrowed Material.rtf in Resources */,
 				CB64A8531DA1CDAE000B796A /* LaunchScreen.storyboard in Resources */,
 				CB64A8851DA35478000B796A /* redRect.png in Resources */,
 				CB64A8501DA1CDAE000B796A /* Assets.xcassets in Resources */,
 				CB64A84E1DA1CDAE000B796A /* Main.storyboard in Resources */,
-				CB64A8791DA2F0A5000B796A /* ButtonRects in Resources */,
 				CB64A87D1DA2F0F5000B796A /* orangeRect.png in Resources */,
 				CB64A8771DA2E940000B796A /* FitnessLogo.png in Resources */,
 				CB64A87F1DA2F0FE000B796A /* greenRect.png in Resources */,
@@ -289,7 +302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB64A84B1DA1CDAE000B796A /* ViewController.swift in Sources */,
 				CB64A8491DA1CDAE000B796A /* AppDelegate.swift in Sources */,
 				CB64A8831DA30096000B796A /* TimeTracker.swift in Sources */,
 				CBF7BAFB1DA47ED700741F5C /* TableViewController.swift in Sources */,

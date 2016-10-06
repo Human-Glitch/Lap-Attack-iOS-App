@@ -24,6 +24,7 @@ class TableViewController: UITableViewController{
             view.scrollIndicatorInsets.top = 10
         
         }
+        TimeTracker.lapList.reverse()
         
     //slowestTimeLabel
         var minutesString = TimeTracker.slowestLapTime.0 > 9 ? "\(TimeTracker.slowestLapTime.0)" : "0\(TimeTracker.slowestLapTime.0)"
@@ -82,14 +83,17 @@ class TableViewController: UITableViewController{
         return TimeTracker.lapList.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyFirstCell", for: indexPath)
 
-        let row = (TimeTracker.lapList.count - indexPath.row)
+        //let row = (TimeTracker.lapList.count - indexPath.row)
+        let row = indexPath.row
         
         cell.textLabel?.text = "Lap \(row)"
-        cell.detailTextLabel?.text = TimeTracker.lapList[indexPath.row]
     
+        cell.detailTextLabel?.text = TimeTracker.lapList[(indexPath.row)]
+        
         return cell
     }
     

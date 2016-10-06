@@ -373,6 +373,7 @@ class TimeTracker: UIViewController{
                     //   averageTuple.1 -= 60
                 }
             }
+            
             averageTuple.2 += lapContainer[index].2
             for i in 0..<(averageTuple.1/lapContainer.count){
                 if averageTuple.2 >= 100{
@@ -381,16 +382,6 @@ class TimeTracker: UIViewController{
                 }
             }
             
-            print()
-            print("-----------------------------------------------")
-            print("LapContainer.0: \(lapContainer[index].0)")
-            print("LapContainer.1: \(lapContainer[index].1)")
-            print("LapContainer.2: \(lapContainer[index].2)")
-            print("Tuple minutes: \(averageTuple.0)")
-            print("Tuple seconds: \(averageTuple.1)")
-            print("Tuple fractions: \(averageTuple.2)")
-            
-            print("-----------------------------------------------")
         }
         
         print("LapContainer.count: \(lapContainer.count)")
@@ -399,22 +390,8 @@ class TimeTracker: UIViewController{
         averageTuple.1 = ((averageTuple.1)/lapContainer.count)
         averageTuple.2 = ((averageTuple.2)/lapContainer.count)
         
-        
         return averageTuple
     
     }
     
 }//end main
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
