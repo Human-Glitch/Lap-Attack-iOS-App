@@ -20,20 +20,42 @@ class TableViewController: UITableViewController{
         
         if let view = view as? UITableView
         {
-            view.contentInset.top = 20
-            view.scrollIndicatorInsets.top = 20
+            view.contentInset.top = 10
+            view.scrollIndicatorInsets.top = 10
         
         }
         
-        let minutesString = TimeTracker.slowestLapTime.0 > 9 ? "\(TimeTracker.slowestLapTime.0)" : "0\(TimeTracker.slowestLapTime.0)"
+    //slowestTimeLabel
+        var minutesString = TimeTracker.slowestLapTime.0 > 9 ? "\(TimeTracker.slowestLapTime.0)" : "0\(TimeTracker.slowestLapTime.0)"
         
-        let secondsString = TimeTracker.slowestLapTime.1 > 9 ? "\(TimeTracker.slowestLapTime.1)" : "0\(TimeTracker.slowestLapTime.1)"
+        var secondsString = TimeTracker.slowestLapTime.1 > 9 ? "\(TimeTracker.slowestLapTime.1)" : "0\(TimeTracker.slowestLapTime.1)"
         
-        let fractionsString = TimeTracker.slowestLapTime.2 > 9 ? "\(TimeTracker.slowestLapTime.2)" : "0\(TimeTracker.slowestLapTime.2)"
+        var fractionsString = TimeTracker.slowestLapTime.2 > 9 ? "\(TimeTracker.slowestLapTime.2)" : "0\(TimeTracker.slowestLapTime.2)"
         
         slowestLapTimeLbl.text = ("\(minutesString) : \(secondsString) . \(fractionsString)")
         
+    //fastestLapTimeLbl
+        minutesString = TimeTracker.fastestLapTime.0 > 9 ? "\(TimeTracker.fastestLapTime.0)" : "0\(TimeTracker.fastestLapTime.0)"
+        
+        secondsString = TimeTracker.fastestLapTime.1 > 9 ? "\(TimeTracker.fastestLapTime.1)" : "0\(TimeTracker.fastestLapTime.1)"
+        
+        fractionsString = TimeTracker.fastestLapTime.2 > 9 ? "\(TimeTracker.fastestLapTime.2)" : "0\(TimeTracker.fastestLapTime.2)"
+        
+        fastestLapTimeLbl.text = ("\(minutesString) : \(secondsString) . \(fractionsString)")
+        
+    //avergeLapTimeLbl
+        minutesString = TimeTracker.averageLapTime.0 > 9 ? "\(TimeTracker.averageLapTime.0)" : "0\(TimeTracker.averageLapTime.0)"
+        
+        secondsString = TimeTracker.averageLapTime.1 > 9 ? "\(TimeTracker.averageLapTime.1)" : "0\(TimeTracker.averageLapTime.1)"
+        
+        fractionsString = TimeTracker.averageLapTime.2 > 9 ? "\(TimeTracker.averageLapTime.2)" : "0\(TimeTracker.averageLapTime.2)"
+        
+        averageLapTimeLbl.text = ("\(minutesString) : \(secondsString) . \(fractionsString)")
+        
+    //Reload TableView with data
         LapsTableView.reloadData()
+        
+    
     }
     
     //Shows navigation controller
