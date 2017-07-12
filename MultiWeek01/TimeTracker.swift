@@ -1,4 +1,3 @@
-//
 //  TimeTracker.swift
 //  MultiWeek01
 //
@@ -8,22 +7,23 @@
 
 import UIKit
 
-class TimeTracker: UIViewController{
-
-    override func viewDidLoad() {
+class TimeTracker: UIViewController
+{
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     //Hides navigation Controller
-    override func viewWillAppear(_ animated: Bool) {
-    
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
@@ -65,7 +65,8 @@ class TimeTracker: UIViewController{
     @IBOutlet var statsBtn: UIButton!
     
     //RESET BTN\\
-    @IBAction func resetBtn(_ sender: AnyObject) {
+    @IBAction func resetBtn(_ sender: AnyObject)
+    {
         timer.invalidate()
         
         //Reset label text on VC1
@@ -116,21 +117,21 @@ class TimeTracker: UIViewController{
     
 
     //NEW LAP BTN\\
-    @IBAction func tappedNewLapBtn(_ sender: AnyObject) {
-        
+    @IBAction func tappedNewLapBtn(_ sender: AnyObject)
+    {
         addLap = true
-        
     }
     
     //STOP START BTN\\
-    @IBAction func tappedStartStopBtn(_ sender: AnyObject) {
+    @IBAction func tappedStartStopBtn(_ sender: AnyObject)
+    {
         
         //Start Button
         if (started == false)
         {
             let aSelector : Selector = #selector(TimeTracker.updateTime)
         
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: aSelector, userInfo: nil, repeats: true)
             
             //Change Start button to Stop button\\
             startStopBtn.setBackgroundImage(#imageLiteral(resourceName: "redRect.png"), for:.normal);
@@ -156,12 +157,16 @@ class TimeTracker: UIViewController{
             
             lapContainer.append((lapMinutes, lapSeconds, lapFractions))
             
-            lap+=1
-            lapCounter.text = String(lap)
-            
-            let finalLap = currentLapTime.text //ISSUE???
-            //submit final currentLapTime\\
-            TimeTracker.lapList.insert((finalLap)!, at: 0)
+            //Only count current laptime if it is not the first lap
+            if TimeTracker.lapList.count > 0
+            {
+                lap+=1
+                lapCounter.text = String(lap)
+                
+                let finalLap = currentLapTime.text
+                //submit final currentLapTime\\
+                TimeTracker.lapList.insert((finalLap)!, at: 0)
+            }
             
             //Turn off lap Btn\\
             newLapBtn.isEnabled = false
@@ -185,7 +190,8 @@ class TimeTracker: UIViewController{
         }
     }
     
-    @IBAction func tappedShowStatsBtn(_ sender: AnyObject) {
+    @IBAction func tappedShowStatsBtn(_ sender: AnyObject)
+    {
         
         //Assign static members the proper statistic calculations
         TimeTracker.slowestLapTime = calculateSlowestLap(lapContainer: lapContainer)
@@ -197,7 +203,6 @@ class TimeTracker: UIViewController{
     //Calculate time separately from totalTime and currentLapTime, convert to string for labels and tables
     func updateTime()
     {
-        
         //calculate totalTime
         fractions += 1
         if fractions == 100
@@ -238,7 +243,6 @@ class TimeTracker: UIViewController{
         
         if(addLap == true)
         {
-            
             lapContainer.append((lapMinutes, lapSeconds, lapFractions))
             
             currentLapTime.text = "\(lapMinutesString) : \(lapSecondsString) . \(lapFractionsString)"
@@ -265,11 +269,15 @@ class TimeTracker: UIViewController{
     //Calculate Slowest Lap for TableView Labels
     func calculateSlowestLap(lapContainer: [(Int, Int, Int)]) -> (Int, Int, Int)
     {
+        //NOTE: LARGER NUMBER MEANS SLOWER
+        
         var slowestTuple : (Int, Int, Int) = (0, 0, 0)
         
         slowestTuple = lapContainer[0]
-        
-        for index in lapContainer.indices {
+    
+        //COMPARE ALL ITEMS IN TABLE VIEW
+        for index in lapContainer.indices
+        {
             print()
             print("-----------------------------------------------")
             print("LapContainer \(index): \(lapContainer[index])")
@@ -283,37 +291,41 @@ class TimeTracker: UIViewController{
                 if(lapContainer[index].1 == slowestTuple.1)
                 {
                     //Check Fractions next
-                    if(lapContainer[index].2 < slowestTuple.2)
+                    if(lapContainer[index].2 > slowestTuple.2)
                     {
                         slowestTuple = lapContainer[index]
                     }
                 //Seconds cont..
-                }else if(lapContainer[index].1 < slowestTuple.1)
+                }else if(lapContainer[index].1 > slowestTuple.1)
                 {
                     //lapContainer seconds makes it new slowestTuple
                     slowestTuple = lapContainer[index]
                 }
             //Minutes cont...
-            }else if(lapContainer[index].0 < slowestTuple.0)
+            }else if(lapContainer[index].0 > slowestTuple.0)
             {
                 //lapContainer minutes makes it new slowestTuple
                 slowestTuple = lapContainer[index]
             }
             
         }//end for loop
-        
-    return slowestTuple
+        return slowestTuple
+    
     }//end function
     
     
     //Calculate Fastest Lap for TableView Labels
     func calculateFastestLap(lapContainer: [(Int, Int, Int)]) -> (Int, Int, Int)
     {
+        //NOTE: SMALLER NUMBER MEANS FASTER
+        
         var fastestTuple : (Int, Int, Int) = (0, 0, 0)
         
         fastestTuple = lapContainer[0]
         
-        for index in lapContainer.indices {
+        //COMPARE ALL ITEMS IN TABLE VIEW
+        for index in lapContainer.indices
+        {
             print()
             print("-----------------------------------------------")
             print("LapContainer \(index): \(lapContainer[index])")
@@ -327,18 +339,18 @@ class TimeTracker: UIViewController{
                 if(lapContainer[index].1 == fastestTuple.1)
                 {
                     //Check Fractions next
-                    if(lapContainer[index].2 > fastestTuple.2)
+                    if(lapContainer[index].2 < fastestTuple.2)
                     {
                         fastestTuple = lapContainer[index]
                     }
                     //Seconds cont..
-                }else if(lapContainer[index].1 > fastestTuple.1)
+                }else if(lapContainer[index].1 < fastestTuple.1)
                 {
                     //lapContainer seconds makes it new slowestTuple
                     fastestTuple = lapContainer[index]
                 }
                 //Minutes cont...
-            }else if(lapContainer[index].0 > fastestTuple.0)
+            }else if(lapContainer[index].0 < fastestTuple.0)
             {
                 //lapContainer minutes makes it new slowestTuple
                 fastestTuple = lapContainer[index]
@@ -353,42 +365,57 @@ class TimeTracker: UIViewController{
     {
         var averageTuple : (Int, Int, Int) = (0, 0, 0)
         
+        //COMPARE ALL ITEMS IN TABLE VIEW
         for index in lapContainer.indices
         {
+            /*
             print()
             print("-----------------------------------------------")
             print("LapContainer \(index): \(lapContainer[index])")
             print("Tuple minutes: \(averageTuple.0)")
             print("Tuple seconds: \(averageTuple.1)")
             print("Tuple fractions: \(averageTuple.2)")
-            
+            */
             print("-----------------------------------------------")
             
             averageTuple.0 += lapContainer[index].0
-            
             averageTuple.1 += lapContainer[index].1
-            for i in 0..<(averageTuple.1/lapContainer.count){
-                if (averageTuple.1) >= 60{
-                    averageTuple.0 += 1
-                    //   averageTuple.1 -= 60
-                }
-            }
-            
             averageTuple.2 += lapContainer[index].2
-            for i in 0..<(averageTuple.1/lapContainer.count){
-                if averageTuple.2 >= 100{
-                    averageTuple.1 += 1
-                
-                }
-            }
-            
+ 
         }
         
-        print("LapContainer.count: \(lapContainer.count)")
+        print("Total fractions : \(averageTuple.2)")
         
-        averageTuple.0 = ((averageTuple.0)/lapContainer.count)
+        if lapContainer.count == 2 && averageTuple.1 > 0
+        {
+            averageTuple.2 += 100
+            averageTuple.2 = (averageTuple.2/lapContainer.count)
+            
+            print("Activated: lapContainer.count == 2 && averageTuple.1 > 0")
+            
+        }else {averageTuple.2 = ((averageTuple.2)/lapContainer.count)}
+        
+        while averageTuple.2 >= 100
+        {
+            averageTuple.2 -= 100
+            averageTuple.1 += 1
+        }
+        
+        print("Average fractions : \(averageTuple.2)")
+        
         averageTuple.1 = ((averageTuple.1)/lapContainer.count)
-        averageTuple.2 = ((averageTuple.2)/lapContainer.count)
+        while averageTuple.1 >= 60
+        {
+            averageTuple.1 -= 60
+            averageTuple.0 += 1
+        }
+    
+        averageTuple.0 = ((averageTuple.0)/lapContainer.count)
+        while averageTuple.0 >= 60
+        {
+            averageTuple.0 -= 60
+            
+        }
         
         return averageTuple
     

@@ -15,7 +15,8 @@ class TableViewController: UITableViewController{
     @IBOutlet var slowestLapTimeLbl: UILabel!
     @IBOutlet var averageLapTimeLbl: UILabel!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         if let view = view as? UITableView
@@ -55,30 +56,31 @@ class TableViewController: UITableViewController{
         
     //Reload TableView with data
         LapsTableView.reloadData()
-        
-    
     }
     
     //Shows navigation controller
-    override func viewWillAppear(_ animated: Bool) {
-        
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         // #warning Incomplete implementation, return the number of rows
         return TimeTracker.lapList.count
     }
@@ -91,7 +93,6 @@ class TableViewController: UITableViewController{
         let row = indexPath.row
         
         cell.textLabel?.text = "Lap \(row)"
-    
         cell.detailTextLabel?.text = TimeTracker.lapList[(indexPath.row)]
         
         return cell
